@@ -2,181 +2,48 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Laboratorium Virtual Next Level</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background: linear-gradient(to top, #e0f7fa, #ffffff);
-      background-image: url('https://storyset.com/illustration/scientific-experiment/amico');
-      background-repeat: no-repeat;
-      background-position: center bottom;
-      background-size: contain;
-      position: relative;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-      transition: background 1s;
-    }
-
-    /* Asap */
-    .smoke {
-      position: absolute;
-      bottom: 150px;
-      left: 50%;
-      width: 20px;
-      height: 20px;
-      background: rgba(180, 200, 255, 0.6);
-      border-radius: 50%;
-      animation: smokeRise 7s infinite ease-in-out;
-      opacity: 0.7;
-    }
-
-    @keyframes smokeRise {
-      0% {
-        transform: translateX(0) translateY(0) scale(1);
-        opacity: 0.7;
-      }
-      50% {
-        transform: translateX(-50px) translateY(-200px) scale(1.5);
-        opacity: 0.5;
-      }
-      100% {
-        transform: translateX(50px) translateY(-400px) scale(2);
-        opacity: 0;
-      }
-    }
-
-    /* Gelembung */
-    .bubble {
-      position: absolute;
-      bottom: 140px;
-      left: 52%;
-      width: 10px;
-      height: 10px;
-      background: rgba(173, 216, 230, 0.8);
-      border-radius: 50%;
-      animation: bubbleUp 5s infinite ease-in-out;
-    }
-
-    @keyframes bubbleUp {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-300px) scale(1.5);
-        opacity: 0;
-      }
-    }
-
-    /* Sparkle */
-    .sparkle {
-      position: absolute;
-      width: 5px;
-      height: 5px;
-      background: yellow;
-      border-radius: 50%;
-      animation: sparkleMove 3s infinite ease-in-out;
-    }
-
-    @keyframes sparkleMove {
-      0% {
-        transform: translateY(0) translateX(0) scale(1);
-        opacity: 1;
-      }
-      50% {
-        transform: translateY(-50px) translateX(20px) scale(1.5);
-        opacity: 0.5;
-      }
-      100% {
-        transform: translateY(-100px) translateX(-20px) scale(0);
-        opacity: 0;
-      }
-    }
-
-    /* Tabung Reaksi Shake */
-    #tabung {
-      position: absolute;
-      bottom: 100px;
-      left: 48%;
-      width: 80px;
-      height: 150px;
-      background: #80deea;
-      border-radius: 30px 30px 10px 10px;
-      animation: shake 2s infinite;
-      z-index: 2;
-    }
-
-    @keyframes shake {
-      0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(2deg); }
-      50% { transform: rotate(-2deg); }
-      75% { transform: rotate(2deg); }
-    }
-
-    /* Tombol Mode */
-    .mode-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #ffffffcc;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-      transition: background 0.3s;
-    }
-    .mode-toggle:hover {
-      background: #cce7ff;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorium Virtual Alchemy</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>Laboratorium Virtual Alchemy</h1>
+    <nav>
+      <a href="#">Beranda</a>
+      <a href="#">Eksperimen</a>
+      <a href="#">Tentang</a>
+      <a href="#">Kontak</a>
+    </nav>
+  </header>
 
-  <!-- Tabung Reaksi -->
-  <div id="tabung"></div>
+  <main>
+    <section class="hero">
+      <h2>Selamat Datang di Laboratorium Virtual!</h2>
+      <p>Eksplorasi dunia kimia secara online dan interaktif.</p>
+      <button>Mulai Eksperimen</button>
+    </section>
 
-  <!-- Asap -->
-  <div class="smoke" style="left:48%; animation-delay:0s;"></div>
-  <div class="smoke" style="left:50%; animation-delay:1s;"></div>
-  <div class="smoke" style="left:52%; animation-delay:2s;"></div>
+    <section class="features">
+      <div class="feature-box">
+        <h3>Eksperimen Aman</h3>
+        <p>Lakukan eksperimen tanpa risiko nyata.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Simulasi Interaktif</h3>
+        <p>Visualisasi reaksi kimia dalam 3D dan animasi.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Belajar Menyenangkan</h3>
+        <p>Materi pembelajaran dengan pendekatan praktis dan seru.</p>
+      </div>
+    </section>
+  </main>
 
-  <!-- Gelembung -->
-  <div class="bubble" style="left:49%; animation-delay:0s;"></div>
-  <div class="bubble" style="left:51%; animation-delay:1.5s;"></div>
-  <div class="bubble" style="left:53%; animation-delay:2s;"></div>
+  <footer>
+    <p>© 2025 Laboratorium Virtual Alchemy. All rights reserved.</p>
+  </footer>
 
-  <!-- Sparkle -->
-  <div class="sparkle" style="bottom:200px; left:45%; animation-delay:0s;"></div>
-  <div class="sparkle" style="bottom:220px; left:55%; animation-delay:1s;"></div>
-  <div class="sparkle" style="bottom:250px; left:50%; animation-delay:2s;"></div>
-
-  <!-- Tombol Mode -->
-  <button class="mode-toggle" onclick="toggleMode()">Ganti Mode</button>
-
-  <!-- Sound -->
-  <audio id="bubbleSound" src="https://freesound.org/data/previews/256/256113_4486188-lq.mp3"></audio>
-
-  <script>
-    // Mode Siang/Malam
-    let isNight = false;
-    function toggleMode() {
-      if (!isNight) {
-        document.body.style.background = "linear-gradient(to top, #0f2027, #203a43, #2c5364)";
-      } else {
-        document.body.style.background = "linear-gradient(to top, #e0f7fa, #ffffff)";
-      }
-      isNight = !isNight;
-    }
-
-    // Sound gelembung tiap beberapa detik
-    setInterval(() => {
-      document.getElementById('bubbleSound').play();
-    }, 5000); // Tiap 5 detik bunyi plop!
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
