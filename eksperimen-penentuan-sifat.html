@@ -3,76 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Penentuan Sifat Larutan</title>
+  <title>Penentuan Asam, Basa, Netral</title>
   <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #e0f7fa;
       padding: 20px;
-      background: #e0f7fa;
       text-align: center;
     }
-    .experiment-container {
-      margin-top: 50px;
-    }
     select, button {
-      padding: 10px;
       margin: 10px;
+      padding: 10px;
       font-size: 16px;
-      border-radius: 8px;
-      border: none;
     }
     .result {
-      margin-top: 30px;
+      margin-top: 20px;
       font-size: 20px;
       font-weight: bold;
-    }
-    .color-box {
-      width: 100px;
-      height: 100px;
-      margin: 20px auto;
-      border-radius: 10px;
-      border: 2px solid #000;
     }
   </style>
 </head>
 <body>
 
   <h1>Eksperimen Penentuan Sifat Larutan</h1>
-  <p>Pilih larutan dan teteskan indikator untuk mengetahui sifatnya!</p>
 
-  <div class="experiment-container">
+  <div>
+    <label for="larutan">Pilih Larutan:</label><br>
     <select id="larutan">
-      <option value="">-- Pilih Larutan --</option>
-      <option value="lemon">Air Lemon 🍋</option>
-      <option value="sabun">Sabun 🧼</option>
-      <option value="air">Air Murni 💧</option>
+      <option value="">--Pilih--</option>
+      <option value="asam_cuka">Asam Cuka</option>
+      <option value="air_sabun">Air Sabun</option>
+      <option value="air_lemon">Air Lemon</option>
+      <option value="larutan_garam">Larutan Garam</option>
+      <option value="soda_kue">Soda Kue</option>
+      <option value="air_teh">Air Teh</option>
+      <option value="air_mineral">Air Minum Biasa</option>
+      <option value="larutan_amonia">Larutan Amonia</option>
+      <option value="jus_tomat">Jus Tomat</option>
+      <option value="air_suling">Air Suling</option>
     </select>
-    <br>
-    <button onclick="teteskanIndikator()">Teteskan Indikator</button>
-
-    <div class="color-box" id="warna"></div>
-    <div class="result" id="hasil"></div>
   </div>
 
-  <script>
-    function teteskanIndikator() {
-      const larutan = document.getElementById("larutan").value;
-      const warnaBox = document.getElementById("warna");
-      const hasilText = document.getElementById("hasil");
+  <div>
+    <label for="indikator">Pilih Indikator:</label><br>
+    <select id="indikator">
+      <option value="">--Pilih--</option>
+      <option value="kol_ungu">Ekstrak Kol Ungu (Alami)</option>
+      <option value="kunyit">Ekstrak Kunyit (Alami)</option>
+      <option value="lakmus_merah">Lakmus Merah (Kimia)</option>
+      <option value="lakmus_biru">Lakmus Biru (Kimia)</option>
+      <option value="fenolftalein">Fenolftalein (Kimia)</option>
+    </select>
+  </div>
 
-      if (larutan === "lemon") {
-        warnaBox.style.background = "red";
-        hasilText.innerText = "Hasil: Larutan Asam (pH rendah)";
-      } else if (larutan === "sabun") {
-        warnaBox.style.background = "blue";
-        hasilText.innerText = "Hasil: Larutan Basa (pH tinggi)";
-      } else if (larutan === "air") {
-        warnaBox.style.background = "green";
-        hasilText.innerText = "Hasil: Larutan Netral (pH 7)";
+  <button onclick="cekSifat()">Cek Sifat Larutan</button>
+
+  <div class="result" id="hasil"></div>
+
+  <script>
+    function cekSifat() {
+      var larutan = document.getElementById('larutan').value;
+      var indikator = document.getElementById('indikator').value;
+      var hasil = document.getElementById('hasil');
+
+      if (larutan === "" || indikator === "") {
+        hasil.innerHTML = "Silakan pilih larutan dan indikator!";
+        return;
+      }
+
+      // Contoh hasil sederhana
+      if (larutan === "asam_cuka" || larutan === "air_lemon" || larutan === "jus_tomat") {
+        hasil.innerHTML = "Larutan bersifat <span style='color:red;'>Asam</span>!";
+      } else if (larutan === "air_sabun" || larutan === "soda_kue" || larutan === "larutan_amonia") {
+        hasil.innerHTML = "Larutan bersifat <span style='color:blue;'>Basa</span>!";
       } else {
-        warnaBox.style.background = "white";
-        hasilText.innerText = "Silakan pilih larutan dulu!";
+        hasil.innerHTML = "Larutan bersifat <span style='color:green;'>Netral</span>!";
       }
     }
   </script>
