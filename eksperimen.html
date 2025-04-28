@@ -1,27 +1,67 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Eksperimen</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eksperimen - Laboratorium Virtual Alchemy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e0f7fa;
+      padding: 20px;
+      text-align: center;
+    }
+    .experiment-list {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .experiment-item {
+      background: #ffffff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .experiment-item:hover {
+      transform: scale(1.05);
+    }
+    .experiment-item a {
+      text-decoration: none;
+      color: #00796b;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    header a {
+      text-decoration: none;
+      color: white;
+      background: #00796b;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Perpustakaan Eksperimen</h1>
-    </header>
 
-    <main class="experiment-list">
-        <div class="experiment-card">
-            <h2>Penentuan Asam, Basa, atau Netral</h2>
-            <p>Gunakan indikator untuk menentukan sifat larutan.</p>
-            <a href="eksperimen-penentuan-sifat.html" class="btn">Mulai Eksperimen</a>
-        </div>
-        <!-- Nanti tambah eksperimen lain di sini -->
-    </main>
+  <header>
+    <h1>Daftar Eksperimen</h1>
+    <a href="index.html">🏠 Kembali ke Beranda</a>
+  </header>
 
-    <footer>
-        <p>&copy; 2025 Laboratorium Virtual Alchemy</p>
-    </footer>
+  <main class="experiment-list">
+    <div class="experiment-item">
+      <a href="eksperimen-penentuan-sifat.html">🧪 Penentuan Asam, Basa, Netral</a>
+    </div>
+    <div class="experiment-item">
+      <a href="#">🔬 Menebak pH Larutan (Coming Soon)</a>
+    </div>
+  </main>
+
 </body>
 </html>
