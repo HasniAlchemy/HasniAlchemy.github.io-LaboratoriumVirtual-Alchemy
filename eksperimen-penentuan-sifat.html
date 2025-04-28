@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Penentuan Sifat Larutan</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #e0f7fa;
+      text-align: center;
+    }
+    .experiment-container {
+      margin-top: 50px;
+    }
+    select, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+    }
+    .result {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .color-box {
+      width: 100px;
+      height: 100px;
+      margin: 20px auto;
+      border-radius: 10px;
+      border: 2px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Eksperimen Penentuan Sifat Larutan</h1>
+  <p>Pilih larutan dan teteskan indikator untuk mengetahui sifatnya!</p>
+
+  <div class="experiment-container">
+    <select id="larutan">
+      <option value="">-- Pilih Larutan --</option>
+      <option value="lemon">Air Lemon 🍋</option>
+      <option value="sabun">Sabun 🧼</option>
+      <option value="air">Air Murni 💧</option>
+    </select>
+    <br>
+    <button onclick="teteskanIndikator()">Teteskan Indikator</button>
+
+    <div class="color-box" id="warna"></div>
+    <div class="result" id="hasil"></div>
+  </div>
+
+  <script>
+    function teteskanIndikator() {
+      const larutan = document.getElementById("larutan").value;
+      const warnaBox = document.getElementById("warna");
+      const hasilText = document.getElementById("hasil");
+
+      if (larutan === "lemon") {
+        warnaBox.style.background = "red";
+        hasilText.innerText = "Hasil: Larutan Asam (pH rendah)";
+      } else if (larutan === "sabun") {
+        warnaBox.style.background = "blue";
+        hasilText.innerText = "Hasil: Larutan Basa (pH tinggi)";
+      } else if (larutan === "air") {
+        warnaBox.style.background = "green";
+        hasilText.innerText = "Hasil: Larutan Netral (pH 7)";
+      } else {
+        warnaBox.style.background = "white";
+        hasilText.innerText = "Silakan pilih larutan dulu!";
+      }
+    }
+  </script>
+
+</body>
+</html>
