@@ -1,66 +1,49 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorium Virtual Alchemy</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorium Virtual Alchemy</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Laboratorium Virtual Alchemy</h1>
-        <p>Selamat datang di dunia percobaan kimia sederhana!</p>
-    </header>
+  <header>
+    <h1>Laboratorium Virtual Alchemy</h1>
+    <nav>
+      <a href="#">Beranda</a>
+      <a href="#">Eksperimen</a>
+      <a href="#">Tentang</a>
+      <a href="#">Kontak</a>
+    </nav>
+  </header>
 
-    <main>
-        <section id="percobaan">
-            <h2>Percobaan pH Sederhana</h2>
-            <p>Mari kita uji apakah suatu larutan bersifat asam, basa, atau netral menggunakan indikator alami!</p>
-            
-            <h3>Alat dan Bahan:</h3>
-            <ul>
-                <li>Larutan cuka</li>
-                <li>Air sabun</li>
-                <li>Air mineral</li>
-                <li>Kol merah rebus (indikator alami)</li>
-                <li>Gelas plastik</li>
-                <li>Sendok kecil</li>
-            </ul>
-
-            <h3>Langkah Percobaan:</h3>
-            <ol>
-                <li>Tuang masing-masing larutan ke dalam gelas berbeda.</li>
-                <li>Tambahkan beberapa tetes air rebusan kol merah ke masing-masing gelas.</li>
-                <li>Amati perubahan warna yang terjadi!</li>
-            </ol>
-
-            <h3>Hasil yang Diharapkan:</h3>
-            <p>
-                - Warna merah/merah muda → Asam<br>
-                - Warna hijau/biru → Basa<br>
-                - Warna ungu → Netral
-            </p>
-        </section>
-    </main>
-<main>
-    <section id="percobaan">
-        <h2>Percobaan pH Sederhana</h2>
-        <p>Mari kita uji apakah suatu larutan bersifat asam, basa, atau netral menggunakan indikator alami!</p>
-        
-        <button onclick="tampilkanInfo()">Lihat Penjelasan Tambahan</button>
-        
-        <div id="info-tambahan" style="display:none; margin-top:20px;">
-            <p><strong>Penjelasan:</strong> Kol merah mengandung antosianin yang berubah warna tergantung pH larutan.</p>
-        </div>
-
-        <!-- (Lanjut daftar alat, langkah, hasil) -->
+  <main>
+    <section class="hero">
+      <h2>Selamat Datang di Laboratorium Virtual!</h2>
+      <p>Eksplorasi dunia kimia secara online dan interaktif.</p>
+      <button>Mulai Eksperimen</button>
     </section>
-</main>
 
-<script src="script.js"></script>
+    <section class="features">
+      <div class="feature-box">
+        <h3>Eksperimen Aman</h3>
+        <p>Lakukan eksperimen tanpa risiko nyata.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Simulasi Interaktif</h3>
+        <p>Visualisasi reaksi kimia dalam 3D dan animasi.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Belajar Menyenangkan</h3>
+        <p>Materi pembelajaran dengan pendekatan praktis dan seru.</p>
+      </div>
+    </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 Laboratorium Virtual Alchemy</p>
-    </footer>
+  <footer>
+    <p>© 2025 Laboratorium Virtual Alchemy. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
