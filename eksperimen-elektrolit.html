@@ -1,106 +1,33 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Eksperimen Elektrolit Interaktif</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            text-align: center;
-            background: linear-gradient(to bottom right, #e0f7fa, #80deea);
-            font-family: 'Arial', sans-serif;
-        }
-
-        .alat {
-            margin-top: 30px;
-            position: relative;
-            width: 300px;
-            height: 400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .larutan {
-            width: 150px;
-            height: 150px;
-            background-color: #b3e5fc;
-            border: 5px solid #0288d1;
-            border-radius: 10px;
-            position: absolute;
-            top: 100px;
-            left: 75px;
-        }
-
-        .lampu {
-            width: 50px;
-            height: 50px;
-            background-color: grey;
-            border-radius: 50%;
-            position: absolute;
-            top: 20px;
-            left: 125px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
-            transition: 0.5s;
-        }
-
-        .ion {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            position: absolute;
-            animation: move 4s infinite;
-        }
-
-        .ion.positif {
-            background-color: red;
-        }
-
-        .ion.negatif {
-            background-color: blue;
-        }
-
-        @keyframes move {
-            0% { transform: translate(0, 0); }
-            25% { transform: translate(40px, 20px); }
-            50% { transform: translate(-20px, 40px); }
-            75% { transform: translate(-30px, -20px); }
-            100% { transform: translate(0, 0); }
-        }
-
-        select {
-            padding: 10px;
-            margin-top: 20px;
-            font-size: 16px;
-        }
-
-        #hasil {
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Uji Elektrolit</title>
+  <link rel="stylesheet" href="elektrolit.css">
 </head>
 <body>
-    <h1>Eksperimen Elektrolit Interaktif</h1>
-    <p>Pilih larutan dan lihat reaksi di alat laboratoriummu!</p>
+  <h1>Uji Larutan Elektrolit</h1>
 
-    <select id="larutan">
-        <option value="">-- Pilih Larutan --</option>
-        <option value="kuat">NaCl - Elektrolit Kuat</option>
-        <option value="kuat">H₂SO₄ - Elektrolit Kuat</option>
-        <option value="lemah">CH₃COOH - Elektrolit Lemah</option>
-        <option value="lemah">NH₃ - Elektrolit Lemah</option>
-        <option value="non">C₆H₁₂O₆ - Non Elektrolit</option>
-        <option value="non">Etanol - Non Elektrolit</option>
-    </select>
+  <label for="larutan">Pilih larutan:</label>
+  <select id="larutan">
+    <option value="">-- Pilih Larutan --</option>
+    <option value="HCl">HCl (Asam Kuat)</option>
+    <option value="CH3COOH">CH3COOH (Asam Lemah)</option>
+    <option value="NaOH">NaOH (Basa Kuat)</option>
+    <option value="NH3">NH3 (Basa Lemah)</option>
+    <option value="NaCl">NaCl (Garam Kuat)</option>
+    <option value="C6H12O6">Glukosa (Non Elektrolit)</option>
+    <option value="Urea">Urea (Non Elektrolit)</option>
+    <option value="H2SO4">H2SO4 (Asam Kuat)</option>
+    <option value="KOH">KOH (Basa Kuat)</option>
+    <option value="Air">Air Murni (Non Elektrolit)</option>
+  </select>
 
-    <div class="alat">
-        <div class="lampu" id="lampu"></div>
-        <div class="larutan" id="larutanBox"></div>
-    </div>
+  <div class="lampu-container">
+    <img id="lampu" src="mati.png" alt="Lampu">
+    <p id="hasil"></p>
+  </div>
 
-    <div id="hasil"></div>
-
-    <script src="script.js"></script>
+  <script src="elektrolit.js"></script>
 </body>
 </html>
