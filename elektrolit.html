@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Uji Elektrolit</title>
+  <link rel="stylesheet" href="elektrolit.css">
+</head>
+<body>
+  <h1>Uji Larutan Elektrolit</h1>
+
+  <label for="larutan">Pilih larutan:</label>
+  <select id="larutan">
+    <option value="">-- Pilih Larutan --</option>
+    <option value="HCl">HCl (Asam Kuat)</option>
+    <option value="CH3COOH">CH3COOH (Asam Lemah)</option>
+    <option value="NaOH">NaOH (Basa Kuat)</option>
+    <option value="NH3">NH3 (Basa Lemah)</option>
+    <option value="NaCl">NaCl (Garam Kuat)</option>
+    <option value="C6H12O6">Glukosa (Non Elektrolit)</option>
+    <option value="Urea">Urea (Non Elektrolit)</option>
+    <option value="H2SO4">H2SO4 (Asam Kuat)</option>
+    <option value="KOH">KOH (Basa Kuat)</option>
+    <option value="Air">Air Murni (Non Elektrolit)</option>
+  </select>
+
+  <div class="lampu-container">
+    <img id="lampu" src="mati.png" alt="Lampu">
+    <p id="hasil"></p>
+  </div>
+
+  <script src="elektrolit.js"></script>
+</body>
+</html>
