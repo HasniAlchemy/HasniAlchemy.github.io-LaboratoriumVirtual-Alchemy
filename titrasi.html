@@ -1,0 +1,82 @@
+<!-- titrasi.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eksperimen Titrasi Asam Basa</title>
+  <link rel="stylesheet" href="titrasi.css">
+</head>
+<body>
+  <header>
+    <h1>Eksperimen Titrasi Asam Basa</h1>
+    <a href="eksperimen.html">Kembali ke Daftar Eksperimen</a>
+  </header>
+
+  <main>
+    <section class="kontrol">
+      <label for="larutan">Pilih Larutan:</label>
+      <select id="larutan">
+        <option value="HCl-NaOH">HCl + NaOH</option>
+        <option value="CH3COOH-NaOH">CH3COOH + NaOH</option>
+        <option value="H2SO4-KOH">H2SO4 + KOH</option>
+        <option value="HNO3-NH4OH">HNO3 + NH4OH</option>
+      </select>
+
+      <label for="indikator">Pilih Indikator:</label>
+      <select id="indikator">
+        <option value="pp">Phenolphthalein</option>
+        <option value="mo">Metil Oranye</option>
+        <option value="btb">Bromtimol Biru</option>
+      </select>
+
+      <button onclick="tetes()">Teteskan Titrant</button>
+      <p id="volume">Volume Titrant: 0 mL</p>
+      <p id="hasil"></p>
+    </section>
+
+    <div class="larutan-box" id="larutanWarna"></div>
+  </main>
+
+  <script>
+    let volume = 0;
+
+    function tetes() {
+      volume += 1;
+      document.getElementById("volume").innerText = `Volume Titrant: ${volume} mL`;
+
+      const larutan = document.getElementById("larutan").value;
+      const indikator = document.getElementById("indikator").value;
+      const warnaBox = document.getElementById("larutanWarna");
+      const hasil = document.getElementById("hasil");
+
+      let warna = "";
+      let hasilText = "";
+
+      if (indikator === "pp") {
+        if (volume < 10) warna = "colorless";
+        else warna = "pink";
+      } else if (indikator === "mo") {
+        if (volume < 10) warna = "red";
+        else warna = "yellow";
+      } else if (indikator === "btb") {
+        if (volume < 10) warna = "yellow";
+        else if (volume < 15) warna = "green";
+        else warna = "blue";
+      }
+
+      warnaBox.style.backgroundColor = warna;
+
+      if (volume === 10) {
+        hasilText = `Titik ekivalen tercapai pada volume ${volume} mL.`;
+      } else if (volume > 10) {
+        hasilText = `Larutan telah melewati titik ekivalen.`;
+      } else {
+        hasilText = "Belum mencapai titik ekivalen.";
+      }
+
+      hasil.innerText = hasilText;
+    }
+  </script>
+</body>
+</html>
