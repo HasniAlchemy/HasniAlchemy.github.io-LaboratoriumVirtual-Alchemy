@@ -1,0 +1,23 @@
+/* titrasi.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f7ff;
+  color: #333;
+  padding: 20px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+.kontrol {
+  margin-bottom: 20px;
+}
+
+.larutan-box {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #ccc;
+  margin-top: 10px;
+  background-color: white;
+}
