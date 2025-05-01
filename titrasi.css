@@ -1,23 +1,59 @@
-/* titrasi.css */
+Tambahkan ke dalam file CSS kamu, misalnya eksperimen.css */
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f3f7ff;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #dff1ff, #f4fafe);
+  margin: 0;
+  padding: 0;
   color: #333;
+}
+
+main.experiment-list {
+  max-width: 600px;
+  margin: 40px auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-header {
-  margin-bottom: 20px;
+.experiment-item {
+  background-color: #ffffff;
+  border: 1px solid #cce7ff;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.kontrol {
-  margin-bottom: 20px;
+.experiment-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
 }
 
-.larutan-box {
-  width: 150px;
-  height: 150px;
-  border: 2px solid #ccc;
-  margin-top: 10px;
-  background-color: white;
+.experiment-item a {
+  display: block;
+  text-decoration: none;
+  color: #0056b3;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 16px 20px;
+  border-radius: 12px;
+  transition: background-color 0.2s;
+}
+
+.experiment-item a:hover {
+  background-color: #e6f2ff;
+}
+
+/* Responsive untuk tampilan HP */
+@media (max-width: 600px) {
+  main.experiment-list {
+    margin: 20px;
+    padding: 10px;
+  }
+
+  .experiment-item a {
+    font-size: 16px;
+    padding: 14px 16px;
+  }
 }
